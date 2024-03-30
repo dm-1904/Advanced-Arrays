@@ -29,12 +29,24 @@ console.log(repeatingTranslate("her family flew to France"));   // "herer family
 */
 
 let repeatingTranslate = function(sentence) {
-    // Your code here 
+    let arr = sentence.split(' ')
+    return arr.map((word) => translateWord(word)).join(' ')
 };
 
 
 let translateWord = function(word) {
-    // Your code here 
+    let vowels = 'aeiou'
+    if(word.length < 3) return word
+
+    for(let i = word.length - 1; i >= 0; i--){
+        let char = word[i]
+        if(vowels.includes(word[word.length-1])){
+            return word + word
+        }
+        if(vowels.includes(char)){
+            return word + word.slice(i)
+        }
+    }
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
