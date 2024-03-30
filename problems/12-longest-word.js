@@ -16,10 +16,21 @@ console.log(longestWord('')); // ''
 */
 
 let longestWord = function(sentence) {
-    // Your code here 
+    let test = -Infinity
+    let longest
+    let arr = sentence.split(' ')
+    arr.forEach((word) => {
+        if(word.length > test){
+            test = word.length
+            longest = word
+        }
+    })
+    return longest
 };
 
-// Your code here 
+console.log(longestWord('where did everyone go')); // 'everyone'
+console.log(longestWord('prefer simplicity over complexity')); // 'simplicity'
+console.log(longestWord('')); // ''
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
